@@ -1,8 +1,9 @@
 "use client";
 
+import { log } from "console";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { href: "/cv", label: "السيرة الذاتية" },
@@ -17,23 +18,77 @@ const navLinks = [
 ];
 
 export default function Links() {
+  const [openMenue, setopenMenue] = useState(false);
   const pathName = usePathname();
-  console.log(pathName);
+
+  const menuRef = useRef<HTMLUListElement>(null);
+
+  // ✅ يقفل القائمة لو المستخدم ضغط في أي مكان خارجها
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setopenMenue(false);
+      }
+    };
+
+    if (openMenue) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openMenue]);
 
   return (
-    <ul className="flex text-sm">
-      {navLinks.map(({ href, label }) => (
-        <li key={href} className="mx-2">
-          <Link
-            href={href}
-            className={` hover:text-blue-500 transition-colors ${
-              pathName === href ? "text-blue-500 font-semibold" : ""
-            }`}
-          >
-            {label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      {/* links large screens */}
+      <ul className=" text-sm lg:flex hidden items-center">
+        {navLinks.map(({ href, label }) => (
+          <li key={href} className="mx-2">
+            <Link
+              href={href}
+              className={` hover:text-blue-500 transition-colors ${
+                pathName === href ? "text-blue-500 font-semibold" : ""
+              }`}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {/* links small screens */}
+
+      <ul
+        className={` text-sm lg:hidden flex flex-col duration-500 fixed top-0  bottom-0 bg-white pt-10 z-50 text-start border-r border-gray-200 ${
+          openMenue ? "left-0" : "-left-full"
+        }`}
+        ref={menuRef}
+      >
+        <button
+          className="absolute top-3 left-4 cursor-pointer text-red-500 text-2xl"
+          onClick={() => setopenMenue(false)}
+        >
+          <i className="fas fa-xmark"></i>
+        </button>
+        {navLinks.map(({ href, label }) => (
+          <li key={href} className="p-3 border-b border-gray-200 ">
+            <Link
+              href={href}
+              className={` hover:text-blue-500 transition-colors ${
+                pathName === href ? "text-blue-500 font-semibold" : ""
+              }`}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      {/* bars icon to close and open menu in small screens */}
+      <button className="lg:hidden" onClick={() => setopenMenue(!openMenue)}>
+        <i className="fas fa-bars"></i>
+      </button>
+    </>
   );
 }

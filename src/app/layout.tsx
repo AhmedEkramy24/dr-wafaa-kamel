@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_Components/Navbar/Navbar";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const cairo = Cairo({
   subsets: ["arabic"],

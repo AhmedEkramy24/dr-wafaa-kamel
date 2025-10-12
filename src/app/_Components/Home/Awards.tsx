@@ -25,7 +25,6 @@ export default function Awards() {
     dots: false,
     infinite: true,
     speed: 600,
-    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,

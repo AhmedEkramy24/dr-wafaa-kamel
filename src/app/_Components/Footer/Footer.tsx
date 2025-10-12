@@ -54,10 +54,10 @@ export default function Footer() {
               <i className="fas fa-envelope"></i>
             </Link>
             <Link href="https://www.facebook.com" aria-label="Facebook">
-              <i className="fa-brand fa-facebook"></i>
+              <i className="fa-brands fa-facebook"></i>
             </Link>
             <Link href="https://www.youtube.com" aria-label="YouTube">
-              <i className="fa-brand fa-youtube"></i>
+              <i className="fa-brands fa-youtube"></i>
             </Link>
           </div>
         </div>

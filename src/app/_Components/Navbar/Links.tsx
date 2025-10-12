@@ -43,13 +43,13 @@ export default function Links() {
   return (
     <>
       {/* links large screens */}
-      <ul className=" text-sm lg:flex hidden items-center">
+      <ul className=" text-md lg:flex hidden items-center">
         {navLinks.map(({ href, label }) => (
-          <li key={href} className="mx-2">
+          <li key={href} className="mx-3">
             <Link
               href={href}
-              className={` hover:text-blue-500 transition-colors ${
-                pathName === href ? "text-blue-500 font-semibold" : ""
+              className={` hover:text-[#235A93] transition-colors ${
+                pathName === href ? "text-[#235A93] font-semibold" : ""
               }`}
             >
               {label}
@@ -75,8 +75,8 @@ export default function Links() {
           <li key={href} className="p-3 border-b border-gray-200 ">
             <Link
               href={href}
-              className={` hover:text-blue-500 transition-colors ${
-                pathName === href ? "text-blue-500 font-semibold" : ""
+              className={` hover:text-[#235A93] transition-colors ${
+                pathName === href ? "text-[#235A93] font-semibold" : ""
               }`}
             >
               {label}

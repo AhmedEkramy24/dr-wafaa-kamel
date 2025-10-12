@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
+import { Amiri } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_Components/Navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Footer from "./_Components/Footer/Footer";
 
-const cairo = Cairo({
+const amiri = Amiri({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -22,9 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ direction: "rtl" }}>
-      <body className={cairo.className}>
+      <body className={amiri.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

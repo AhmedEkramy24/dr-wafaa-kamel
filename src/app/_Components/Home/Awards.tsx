@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Award {
   title: string;
@@ -18,13 +19,46 @@ export default function Awards() {
     fetch("/api/awards")
       .then((res) => res.json())
       .then((data) => setAwards(data))
-      .catch((err) => console.error("Error loading awards:", err));
+      .catch((err) => console.error("Error loading books:", err));
   }, []);
+
+  const [mounted, setMounted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const sliderRef = useRef<Slider>(null);
+  useEffect(() => {
+    // نتأكد إننا في الـ client
+    setMounted(true);
+    setWindowWidth(window.innerWidth);
+
+    // تحديث السلايدر بعد ما يتحمل بالكامل
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    // إجبار react-slick على حساب المقاسات بعد التركيب
+    setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+      sliderRef.current?.slickGoTo(0);
+    }, 300);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (!mounted || windowWidth === 0) {
+    return <p className="text-center mt-6">جارٍ تحميل الصور...</p>;
+  }
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 600,
+    slidesToShow:
+      windowWidth < 640
+        ? 1
+        : windowWidth < 1024
+        ? 2
+        : windowWidth < 1280
+        ? 3
+        : 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
@@ -32,17 +66,6 @@ export default function Awards() {
     centerMode: true,
     centerPadding: "40px",
     rtl: true,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: { slidesToShow: 3, centerPadding: "30px" },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2, centerPadding: "20px" },
-      },
-      { breakpoint: 640, settings: { slidesToShow: 1, centerPadding: "10px" } },
-    ],
   };
 
   if (awards.length === 0) {
@@ -64,14 +87,17 @@ export default function Awards() {
           </Link>
         </div>
         <div>
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {awards.map((item) => (
               <div key={item.title} className="px-4">
                 <div className="flex flex-col items-center bg-white rounded-xl shadow-md ">
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.title}
-                    className="h-[220px] w-full object-cover rounded-lg"
+                    data-book
+                    className="h-[300px] w-full object-cover rounded-lg"
+                    width={300}
+                    height={300}
                   />
                   <p className="mt-3 py-2 text-md font-semibold text-center">
                     {item.title}

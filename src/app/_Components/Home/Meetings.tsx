@@ -96,10 +96,13 @@ export default function Meetings() {
               <div key={item.title} className="px-4">
                 <div className="flex flex-col items-center bg-white rounded-xl shadow-md ">
                   <iframe
-                    src={item.src}
-                    className="h-[230px] w-full"
+                    src={item.src.replace("watch?v=", "embed/")}
+                    title={item.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                  ></iframe>
+                    className="w-full h-[230px] rounded-xl"
+                  />
+
                   <p className="mt-3 py-2 text-md font-semibold text-center">
                     {item.title}
                   </p>

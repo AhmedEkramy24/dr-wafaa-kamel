@@ -5,26 +5,25 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import Image from "next/image";
 
-interface Award {
+interface Book {
   title: string;
   src: string;
 }
 
-export default function Awards() {
-  const [awards, setAwards] = useState<Award[]>([]);
-
-  useEffect(() => {
-    fetch("/api/awards")
-      .then((res) => res.json())
-      .then((data) => setAwards(data))
-      .catch((err) => console.error("Error loading books:", err));
-  }, []);
-
+export default function Programs() {
+  const [programs, setPrograms] = useState<Book[]>([]);
   const [mounted, setMounted] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const sliderRef = useRef<Slider>(null);
+
+  useEffect(() => {
+    fetch("/api/programs")
+      .then((res) => res.json())
+      .then((data) => setPrograms(data))
+      .catch((err) => console.error("Error loading books:", err));
+  }, []);
+
   useEffect(() => {
     // نتأكد إننا في الـ client
     setMounted(true);
@@ -68,43 +67,37 @@ export default function Awards() {
     rtl: true,
   };
 
-  if (awards.length === 0) {
-    return <p className="text-center mt-6">جارٍ تحميل الصور...</p>;
-  }
-
   return (
-    <div className="bg-slate-100">
+    <div>
       <div className="container mx-auto py-10">
-        <div className="title my-10 flex justify-between items-center px-4">
-          <h2 className="text-3xl font-bold  text-[#235A93]">جوائز وشهادات</h2>
+        <div className="title flex justify-between items-center px-4 my-10">
+          <h2 className="text-3xl font-bold text-[#235A93]">
+            برامج لغوية حاسوبية
+          </h2>
           <Link
-            href={"/award"}
+            href={"/books"}
             className="underline hover:text-[#235A93] text-lg font-semibold"
           >
             عرض المزيد
           </Link>
         </div>
-        <div>
-          <Slider ref={sliderRef} {...settings}>
-            {awards.map((item) => (
-              <div key={item.title} className="px-4">
-                <div className="flex flex-col items-center bg-white rounded-xl shadow-md ">
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    data-book
-                    className="h-[300px] w-full object-cover rounded-lg"
-                    width={300}
-                    height={300}
-                  />
-                  <p className="mt-3 py-2 text-md font-semibold text-center">
-                    {item.title}
-                  </p>
-                </div>
+
+        <Slider ref={sliderRef} {...settings}>
+          {programs.map((item) => (
+            <div key={item.title} className="px-4">
+              <div className="flex flex-col items-center bg-slate-50 rounded-xl shadow-md">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="h-[300px] w-full object-cover rounded-lg"
+                />
+                <p className="mt-3 py-2 text-md font-semibold text-center">
+                  {item.title}
+                </p>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

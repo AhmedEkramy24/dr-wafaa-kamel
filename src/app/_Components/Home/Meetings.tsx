@@ -79,8 +79,8 @@ export default function Meetings() {
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto py-10">
-        <div className="title my-5 flex justify-between items-center px-4">
-          <h2 className="text-3xl font-bold mb-8 text-[#235A93]">
+        <div className="title my-10 flex justify-between items-center px-4">
+          <h2 className="text-3xl font-bold  text-[#235A93]">
             لقاءات ثقافية تليفزيونية
           </h2>
           <Link

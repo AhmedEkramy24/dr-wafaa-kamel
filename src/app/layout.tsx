@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" style={{ direction: "rtl" }}>
       <body className={amiri.className}>
         <Navbar />
-        {children}
+        <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
     </html>

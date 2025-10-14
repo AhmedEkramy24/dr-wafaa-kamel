@@ -1,17 +1,23 @@
 import React from "react";
 import Info from "./Info";
-import Awards from "./Awards";
-import Certificates from "./Certificates";
+import Shares from "./Shares";
+import School from "./School";
+import Volenteering from "./Volenteering";
+import Image from "next/image";
 
 export default function Cv() {
   return (
-    <div className="container mx-auto ">
-      <h1 className="text-3xl font-bold mb-4 text-blue-900 mt-6 text-center ">
+    <div>
+      {" "}
+      <h1 className="md:text-5xl text-3xl font-bold mb-4 text-white md:py-8 py-5 text-center title">
         السيرة الذاتية
       </h1>
-      <Info />
-      <Awards />
-      <Certificates />
+      <div className="container mx-auto text-lg">
+        <Info />
+        <School />
+        <Shares />
+        <Volenteering />
+      </div>
     </div>
   );
 }

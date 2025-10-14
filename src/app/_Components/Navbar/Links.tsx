@@ -1,6 +1,5 @@
 "use client";
 
-import { log } from "console";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -15,6 +14,22 @@ const navLinks = [
   { href: "/study", label: "دراسات ونقد لأعمالي" },
   { href: "/volenteering", label: "إسهام في قضية علمية وقومية" },
   { href: "/contact", label: "اتصل بنا" },
+  {
+    href: "/search",
+    label: "البحوث المنشورة دوليا وعربيا ومحليا",
+  },
+  {
+    href: "/shares",
+    label: "مشاركة في ندوات علمية",
+  },
+  {
+    href: "/articles",
+    label: "بحوث ورسائل علمية منشورة بنيت على أعمالي",
+  },
+  {
+    href: "/writeings",
+    label: "بعض ما كتب عني",
+  },
 ];
 
 export default function Links() {

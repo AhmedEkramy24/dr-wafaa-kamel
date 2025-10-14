@@ -3,7 +3,7 @@ import React from "react";
 export default function Info() {
   return (
     <div className="p-2">
-      <h2 className="font-bold text-xl text-blue-600 mb-5 ">
+      <h2 className="font-bold text-3xl text-[#235A93] mb-5 ">
         {" "}
         البيانات الشخصية:
       </h2>

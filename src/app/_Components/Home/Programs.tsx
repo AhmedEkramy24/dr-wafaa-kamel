@@ -86,7 +86,7 @@ export default function Programs() {
                   alt={item.title}
                   width={300}
                   height={300}
-                  className="h-[300px] w-full object-cover rounded-lg"
+                  className="h-[400px] w-full object-cover rounded-lg"
                 />
                 <p className="mt-3 py-2 text-md font-semibold text-center">
                   {item.title}

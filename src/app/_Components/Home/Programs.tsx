@@ -71,16 +71,10 @@ export default function Programs() {
   return (
     <div>
       <div className="container mx-auto py-10">
-        <div className="title flex justify-between items-center px-4 my-10">
+        <div className="px-4 my-10">
           <h2 className="text-3xl font-bold text-[#235A93]">
             برامج لغوية حاسوبية
           </h2>
-          <Link
-            href={"/books"}
-            className="underline hover:text-[#235A93] text-lg font-semibold"
-          >
-            عرض المزيد
-          </Link>
         </div>
 
         <Slider ref={sliderRef} {...settings}>
@@ -101,6 +95,12 @@ export default function Programs() {
             </div>
           ))}
         </Slider>
+        <Link
+          href={"/programes"}
+          className="underline hover:text-[#235A93] text-2xl font-semibold text-center block mt-10"
+        >
+          عرض المزيد
+        </Link>
       </div>
     </div>
   );

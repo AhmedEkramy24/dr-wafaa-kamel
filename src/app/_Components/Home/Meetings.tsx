@@ -79,16 +79,10 @@ export default function Meetings() {
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto py-10">
-        <div className="title my-10 flex justify-between items-center px-4">
-          <h2 className="text-3xl font-bold  text-[#235A93]">
+        <div className=" my-10  px-4">
+          <h2 className="text-4xl font-bold  text-[#235A93]">
             لقاءات ثقافية تليفزيونية
           </h2>
-          <Link
-            href={"/books"}
-            className="underline hover:text-[#235A93] text-lg font-semibold"
-          >
-            عرض المزيد
-          </Link>
         </div>
         <div>
           <Slider ref={sliderRef} {...settings}>
@@ -110,6 +104,12 @@ export default function Meetings() {
               </div>
             ))}
           </Slider>
+          <Link
+            href={"/meetings"}
+            className="underline hover:text-[#235A93] text-2xl font-semibold text-center block mt-10"
+          >
+            عرض المزيد
+          </Link>
         </div>
       </div>
     </div>

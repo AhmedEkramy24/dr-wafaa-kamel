@@ -71,36 +71,35 @@ export default function Books() {
   return (
     <div>
       <div className="container mx-auto py-10">
-        <div className="title my-10 flex justify-between items-center px-4">
-          <h2 className="text-3xl font-bold  text-[#235A93]">
+        <div className="px-4">
+          <h2 className="text-4xl mb-10 font-bold  text-[#235A93]">
             كتب مؤلفة و مترجمة
           </h2>
-          <Link
-            href={"/books"}
-            className="underline hover:text-[#235A93] text-lg font-semibold"
-          >
-            عرض المزيد
-          </Link>
         </div>
 
         <Slider ref={sliderRef} {...settings}>
           {books.map((item) => (
             <div key={item.title} className="px-4">
-              <div className="flex flex-col items-center bg-slate-100 rounded-xl shadow-md">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  className="h-[300px] w-full object-cover rounded-lg"
-                  width={300}
-                  height={300}
-                />
-                <p className="mt-3 py-2 text-md font-semibold text-center">
-                  .. {item.title.split(" ", 5).join(" ")}
-                </p>
-              </div>
+              <Link href={"/books"}>
+                <div className="flex flex-col items-center bg-slate-100 rounded-xl shadow-md">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    className=" w-full object-cover rounded-lg"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+              </Link>
             </div>
           ))}
         </Slider>
+        <Link
+          href={"/books"}
+          className="underline hover:text-[#235A93] text-2xl font-semibold text-center block mt-10"
+        >
+          عرض المزيد
+        </Link>
       </div>
     </div>
   );

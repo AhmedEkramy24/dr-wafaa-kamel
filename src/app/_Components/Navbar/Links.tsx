@@ -13,9 +13,9 @@ const navLinks = [
   { href: "/meetings", label: "لقاءات ثقافية تلفزيونية" },
   { href: "/study", label: "دراسات ونقد لأعمالي" },
   { href: "/volenteering", label: "إسهام في قضية علمية وقومية" },
-  { href: "/contact", label: "اتصل بنا" },
+
   {
-    href: "/search",
+    href: "/researches",
     label: "البحوث المنشورة دوليا وعربيا ومحليا",
   },
   {
@@ -30,6 +30,7 @@ const navLinks = [
     href: "/writeings",
     label: "بعض ما كتب عني",
   },
+  { href: "/contact", label: "اتصل بنا" },
 ];
 
 export default function Links() {

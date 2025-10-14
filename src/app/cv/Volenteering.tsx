@@ -31,7 +31,7 @@ export default function Volenteering() {
       </h2>
       <div className="space-y-3">
         {school.map((item, index) => (
-          <p className="font-bold">
+          <p className="font-bold" key={index}>
             <span className="text-[#235A93] ml-2 font-extrabold">.</span>
             {item}
           </p>

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Book {
   title: string;
@@ -86,10 +87,12 @@ export default function Books() {
           {books.map((item) => (
             <div key={item.title} className="px-4">
               <div className="flex flex-col items-center bg-slate-100 rounded-xl shadow-md">
-                <img
+                <Image
                   src={item.src}
                   alt={item.title}
                   className="h-[300px] w-full object-cover rounded-lg"
+                  width={300}
+                  height={300}
                 />
                 <p className="mt-3 py-2 text-md font-semibold text-center">
                   .. {item.title.split(" ", 5).join(" ")}

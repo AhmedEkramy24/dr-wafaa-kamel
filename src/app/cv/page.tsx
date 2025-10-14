@@ -3,7 +3,6 @@ import Info from "./Info";
 import Shares from "./Shares";
 import School from "./School";
 import Volenteering from "./Volenteering";
-import Image from "next/image";
 
 export default function Cv() {
   return (

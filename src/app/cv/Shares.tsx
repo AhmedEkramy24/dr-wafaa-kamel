@@ -1,4 +1,3 @@
-import { title } from "process";
 import React from "react";
 
 export default function Shares() {

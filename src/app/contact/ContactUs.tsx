@@ -22,7 +22,7 @@ export default function ContactUs() {
         "01TyrLKUGZhATmwNL" // Public Key
       )
       .then(
-        (result) => {
+        () => {
           alert("✅ تم إرسال الرسالة بنجاح!");
           if (form.current) {
             form.current.reset();

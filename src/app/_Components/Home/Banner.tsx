@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Banner() {
   return (
     <>
-      <div className="container mx-auto flex flex-col-reverse md:flex-row md:justify-around items-center gap-5 justify-center h-[90vh]">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row md:justify-around items-center gap-5 justify-center min-h-[60vh]">
         <div className="txt p-3">
           <BlurText
             text="الدكتورة / وَفاءُ كامِلٌ"
@@ -33,7 +33,7 @@ export default function Banner() {
             <Link href={"/cv"}>مشاهدة السيرة الذاتية</Link>
           </button>
         </div>
-        <div className="img rounded-full md:size-[400px] size-[300px] overflow-hidden border-2 border-slate-100 shadow-2xl">
+        <div className="img rounded-full md:size-[330px] size-[300px] overflow-hidden border-2 border-slate-100 shadow-2xl">
           <Image
             src={"/images/dr.jpg"}
             alt="الدكتورة / وَفاءُ كامِلٌ"

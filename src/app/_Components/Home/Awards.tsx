@@ -75,7 +75,7 @@ export default function Awards() {
   return (
     <div className="bg-slate-100">
       <div className="container mx-auto py-10">
-        <div className=" my-10  px-4">
+        <div className=" mb-10  px-4">
           <h2 className="text-4xl font-bold  text-[#235A93]">جوائز وشهادات</h2>
         </div>
         <div>

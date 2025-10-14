@@ -122,7 +122,7 @@ export default function page() {
             {researches.map(function (item, index) {
               if (index < 11) {
                 return (
-                  <p className="text-xl">
+                  <p className="text-xl" key={index}>
                     <span className="font-bold text-[#235A93]">
                       {index + 1} .{" "}
                     </span>
@@ -141,7 +141,7 @@ export default function page() {
             {researches.map(function (item, index) {
               if (index >= 11) {
                 return (
-                  <p className="text-xl">
+                  <p className="text-xl" key={index}>
                     <span className="font-bold text-[#235A93]">
                       {index + 1} .{" "}
                     </span>

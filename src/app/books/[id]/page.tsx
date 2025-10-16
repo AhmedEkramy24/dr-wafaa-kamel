@@ -12,7 +12,7 @@ interface Book {
   title: string;
 }
 
-export default function page() {
+export default function SingleBook() {
   const { id }: { id: string } = useParams();
   const [book, setBook] = useState<Book | null>(null);
 

@@ -4,8 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-type Props = {};
-
 const links = [
   {
     href: "/researches",
@@ -26,7 +24,7 @@ const links = [
   { href: "/contact", label: "اتصل بنا" },
 ];
 
-export default function LinksSR({}: Props) {
+export default function LinksSR() {
   const pathName = usePathname();
   return (
     <ul className=" text-lg font-semibold lg:flex hidden items-center py-4">

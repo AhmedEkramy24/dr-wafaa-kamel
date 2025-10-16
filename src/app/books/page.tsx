@@ -11,12 +11,9 @@ interface Book {
 }
 
 export default async function page() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/books`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/books`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("فشل في تحميل البيانات");

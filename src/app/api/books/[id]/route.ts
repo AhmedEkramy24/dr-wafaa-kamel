@@ -2,11 +2,13 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request, { params }: { params: any }) {
-  const id = params.id;
+export async function GET(
+  request: Request,
+  context: { params: Promise<{ id: string }> }
+) {
+  const { id } = await context.params; // ✅ لاحظ الـ await هنا
   const folderPath = path.join(process.cwd(), "public/books_page", id);
 
-  // لو الفولدر مش موجود
   if (!fs.existsSync(folderPath)) {
     return NextResponse.json({ error: "Folder not found" }, { status: 404 });
   }

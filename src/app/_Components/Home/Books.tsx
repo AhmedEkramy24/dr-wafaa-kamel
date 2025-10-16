@@ -19,7 +19,7 @@ export default function Books() {
   const sliderRef = useRef<Slider>(null);
 
   useEffect(() => {
-    fetch("/api/books")
+    fetch("/api/bookshome")
       .then((res) => res.json())
       .then((data) => setBooks(data))
       .catch((err) => console.error("Error loading books:", err));

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import BlurText from "../ReactBits/BlurText";
 import Link from "next/link";
+import FadeContent from "../ReactBits/FadeContent";
 
 export default function Banner() {
   return (
@@ -33,15 +34,22 @@ export default function Banner() {
             <Link href={"/cv"}>مشاهدة السيرة الذاتية</Link>
           </button>
         </div>
-        <div className="img rounded-full md:size-[330px] size-[300px] overflow-hidden border-2 border-slate-100 shadow-2xl">
-          <Image
-            src={"/images/dr.jpg"}
-            alt="الدكتورة / وَفاءُ كامِلٌ"
-            width={300}
-            height={300}
-            className="w-full object-cover"
-          />
-        </div>
+        <FadeContent
+          blur={true}
+          duration={2000}
+          easing="ease-out"
+          initialOpacity={0}
+        >
+          <div className="img rounded-full md:size-[330px] size-[300px] overflow-hidden border-2 border-slate-100 shadow-2xl">
+            <Image
+              src={"/images/dr.jpg"}
+              alt="الدكتورة / وَفاءُ كامِلٌ"
+              width={300}
+              height={300}
+              className="w-full object-cover"
+            />
+          </div>
+        </FadeContent>
       </div>
     </>
   );

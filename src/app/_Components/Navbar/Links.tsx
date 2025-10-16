@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/meetings", label: "لقاءات ثقافية تلفزيونية" },
   { href: "/study", label: "دراسات ونقد لأعمالي" },
   { href: "/volenteering", label: "إسهام في قضية علمية وقومية" },
-
   {
     href: "/researches",
     label: "البحوث المنشورة دوليا وعربيا ومحليا",
@@ -59,19 +58,22 @@ export default function Links() {
   return (
     <>
       {/* links large screens */}
-      <ul className=" text-md lg:flex hidden items-center">
-        {navLinks.map(({ href, label }) => (
-          <li key={href} className="mx-3">
-            <Link
-              href={href}
-              className={` hover:text-[#235A93] transition-colors ${
-                pathName === href ? "text-[#235A93] font-semibold" : ""
-              }`}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
+      <ul className=" text-lg font-semibold lg:flex hidden items-center">
+        {navLinks.map(
+          ({ href, label }, index) =>
+            index < 8 && (
+              <li key={href} className="mx-3">
+                <Link
+                  href={href}
+                  className={` hover:text-[#235A93] transition-colors ${
+                    pathName === href ? "text-[#235A93] font-semibold" : ""
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            )
+        )}
       </ul>
       {/* links small screens */}
 

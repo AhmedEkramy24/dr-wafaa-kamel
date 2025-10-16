@@ -2,10 +2,7 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: Request, { params }: { params: any }) {
   const id = params.id;
   const folderPath = path.join(process.cwd(), "public/books_page", id);
 

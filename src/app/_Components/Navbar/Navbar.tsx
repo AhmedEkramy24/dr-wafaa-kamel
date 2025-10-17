@@ -11,7 +11,7 @@ export default function Navbar() {
         <Links />
       </div>
       <div className="h-[1px] bg-slate-300"></div>
-      <div className="container flex justify-end">
+      <div className="container mx-auto flex justify-end">
         <LinksSR />
       </div>
     </nav>

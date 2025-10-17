@@ -110,7 +110,7 @@ the Arabic/Islamic world Department of Arabic and Translation studies, American 
   ` شاركت في إعداد مادة (المعجم الحديث لمصطلحات الإعلام ووسائل الاتصال ) وتصنيفها وإصدار المعجم في صيف عام 2025، مع لجنة اللغة العربية في الإعلام بمجمع القاهرة ، بوصفها مقررة لهذه اللجنة.`,
 ]; // حسبي الله و نعم الوكيل
 
-export default function page() {
+export default function Researches() {
   return (
     <>
       <div>

@@ -1,7 +1,7 @@
 import React from "react";
 import ContactUs from "./ContactUs";
 
-export default function page() {
+export default function Contact() {
   return (
     <div>
       <ContactUs />

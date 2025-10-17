@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import Loading from "@/loading";
+import Loading from "@/app/loading";
 
 interface Book {
   id: string;

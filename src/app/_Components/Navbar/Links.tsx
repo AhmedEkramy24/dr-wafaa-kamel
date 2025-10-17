@@ -26,7 +26,7 @@ const navLinks = [
     label: "بحوث ورسائل علمية منشورة بنيت على أعمالي",
   },
   {
-    href: "/writeings",
+    href: "/writings",
     label: "بعض ما كتب عني",
   },
   { href: "/contact", label: "اتصل بنا" },

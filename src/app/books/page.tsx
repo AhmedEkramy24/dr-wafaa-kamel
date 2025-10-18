@@ -5,13 +5,13 @@ import AnimatedContent from "../_Components/ReactBits/AnimatedContent";
 import Link from "next/link";
 
 interface Book {
-  id: string;
-  cover: string;
+  id: number;
+  covers: string[];
   title: string;
 }
 
 export default async function Books() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/books`, {
+  const res = await fetch(`https://test.drwafaakamel.com/api/v1/categories/5`, {
     next: { revalidate: 600 },
   });
 
@@ -19,7 +19,7 @@ export default async function Books() {
     throw new Error("فشل في تحميل البيانات");
   }
 
-  const books = await res.json();
+  const { data } = await res.json();
 
   return (
     <>
@@ -31,13 +31,14 @@ export default async function Books() {
         animateOpacity
       >
         <div className="container mx-auto flex flex-wrap">
-          {books.map((item: Book, index: number) => (
+          {data?.map((item: Book, index: number) => (
             <div key={index} className="md:w-1/2 lg:w-1/3 xl:w-1/4  w-full p-8">
               <Link href={`/books/${item.id}`}>
                 <div className="shadow-2xl group rounded-lg overflow-hidden">
                   <div className="relative overflow-hidden ">
                     <Image
-                      src={item.cover}
+                      unoptimized
+                      src={item.covers[item.covers.length - 1]}
                       alt={item.title}
                       width={200}
                       height={300}

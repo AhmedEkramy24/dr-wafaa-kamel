@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 const navLinks = [
   { href: "/cv", label: "السيرة الذاتية" },
   { href: "/awards", label: "الجوائز" },
-  { href: "/certificates", label: "شهادات تقدير" },
+  { href: "/certificates", label: "    التكريم وشهادات تقدير " },
   { href: "/programes", label: "برامج لغوية حاسوبية" },
   { href: "/books", label: "كتب مؤلفة ومترجمة" },
   { href: "/meetings", label: "لقاءات ثقافية تلفزيونية" },

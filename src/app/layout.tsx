@@ -3,6 +3,8 @@ import { Amiri } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_Components/Navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Footer from "./_Components/Footer/Footer";
 
 const amiri = Amiri({

@@ -19,7 +19,6 @@ export default function PdfViewer({
     );
   }
 
-  // تحويل /view أو أي شكل من اللينك إلى /preview
   const previewUrl = driveUrl.replace("/view", "/preview");
 
   return (

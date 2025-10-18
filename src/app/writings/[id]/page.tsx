@@ -1,7 +1,9 @@
+"use client";
+
+import PdfViewer from "@/app/_Components/PdfViewer/PdfViewer";
+import Title from "@/app/_Components/Title/Title";
+import { useParams } from "next/navigation";
 import React from "react";
-import AnimatedContent from "../_Components/ReactBits/AnimatedContent";
-import Title from "../_Components/Title/Title";
-import Link from "next/link";
 
 const data = [
   {
@@ -51,31 +53,22 @@ const data = [
   },
 ];
 
-export default function Writings() {
+export default function SingleWriting() {
+  const { id } = useParams();
+  console.log(id);
+  const writings = data.find((item) => item.id === id);
   return (
     <div>
-      <Title>بعض ما كتب عنى فى بعض بحوثى 🖋</Title>
-      <AnimatedContent
-        direction="horizontal"
-        duration={1.2}
-        initialOpacity={0.2}
-        animateOpacity
-      >
-        <div className="container flex flex-wrap mx-auto">
-          {data.map((item, index) => (
-            <Link
-              href={`/writings/${item.id}`}
-              key={index}
-              className="lg:w-1/4 md:w-1/3 sm:w-1/2 w-full p-3 "
-            >
-              <div className="w-full sm:h-[200px] h-[250px] rounded-2xl overflow-hidden bg-blue-100 text-[#235A93] flex justify-center items-center text-7xl">
-                <i className="fas fa-file-pdf"></i>
-              </div>
-              <p className="text-center p-2 font-semibold">{item.title}</p>
-            </Link>
-          ))}
-        </div>
-      </AnimatedContent>
+      {writings ? (
+        <>
+          <Title>{`${writings.title}`}</Title>
+          <div className="p-2 md:w-3/4 container mx-auto">
+            <PdfViewer driveUrl={writings.link} />
+          </div>
+        </>
+      ) : (
+        <p>Writing not found.</p>
+      )}
     </div>
   );
 }

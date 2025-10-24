@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+  font-family: "Amiri", serif;
+}
+
+.title {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/images.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.active {
+  @apply text-[#235A93];
+}

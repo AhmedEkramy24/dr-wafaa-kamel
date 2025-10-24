@@ -1,11 +1,14 @@
 {
   "name": "dr-waffa-kamel-react",
+  "homepage": "https://AhmedEkramy24.github.io/dr-wafaa-kamel",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -11,9 +11,7 @@ export default function SingleStudy() {
   const [study, setStudy] = useState<DataItem | null>(null);
 
   async function getStudy() {
-    const data = await fetchData(
-      `https://test.drwafaakamel.com/api/v1/items/${id}`
-    );
+    const data = await fetchData(`/api/v1/items/${id}`);
     setStudy(data);
   }
 

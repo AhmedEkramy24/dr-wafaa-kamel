@@ -12,10 +12,7 @@ export default function Shares() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/8"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/8")) || [];
       setData(res);
       setLoading(false);
     }
@@ -36,7 +33,7 @@ export default function Shares() {
 
   return (
     <div>
-      <Title>برامج لغوية حاسوبية</Title>
+      <Title>مشاركة في ندوات علمية</Title>
       {data && data.length > 0 ? (
         <AnimatedContent
           direction="horizontal"

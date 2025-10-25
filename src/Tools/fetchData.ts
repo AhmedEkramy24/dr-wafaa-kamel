@@ -1,6 +1,6 @@
 export async function fetchData(endpoint: string) {
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch(`https://testa.drwafaakamel.com${endpoint}`, {
       // next: { revalidate: 300 },
       cache: "no-store",
     });

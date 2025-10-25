@@ -11,9 +11,7 @@ export default function SingleWriting() {
   const [writing, setWriting] = useState<DataItem | null>(null);
 
   async function getWriting() {
-    const data = await fetchData(
-      `https://test.drwafaakamel.com/api/v1/items/${id}`
-    );
+    const data = await fetchData(`/api/v1/items/${id}`);
     setWriting(data);
   }
 

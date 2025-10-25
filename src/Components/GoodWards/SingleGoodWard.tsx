@@ -11,9 +11,7 @@ export default function GoodWard() {
   const [goodward, setGoodWard] = useState<DataItem | null>(null);
 
   async function getGoodWard() {
-    const data = await fetchData(
-      `https://test.drwafaakamel.com/api/v1/items/${id}`
-    );
+    const data = await fetchData(`/api/v1/items/${id}`);
     setGoodWard(data);
   }
 

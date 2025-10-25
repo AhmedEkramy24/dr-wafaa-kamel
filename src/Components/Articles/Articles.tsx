@@ -10,10 +10,7 @@ export default function Articles() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/10"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/10")) || [];
       setData(res);
       setLoading(false);
     }

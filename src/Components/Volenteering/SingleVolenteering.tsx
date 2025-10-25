@@ -11,9 +11,7 @@ export default function SingleVolenteering() {
   const [volenteering, setVolenteering] = useState<DataItem | null>(null);
 
   async function getVolenteering() {
-    const data = await fetchData(
-      `https://test.drwafaakamel.com/api/v1/items/${id}`
-    );
+    const data = await fetchData(`/api/v1/items/${id}`);
     setVolenteering(data);
   }
 

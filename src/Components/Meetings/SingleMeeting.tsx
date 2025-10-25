@@ -11,9 +11,7 @@ export default function Meeting() {
   const [meeting, setMetting] = useState<DataItem | null>(null);
 
   async function getMetting() {
-    const data = await fetchData(
-      `https://test.drwafaakamel.com/api/v1/items/${id}`
-    );
+    const data = await fetchData(`/api/v1/items/${id}`);
     setMetting(data);
   }
 

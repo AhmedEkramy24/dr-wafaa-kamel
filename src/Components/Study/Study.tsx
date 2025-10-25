@@ -88,10 +88,7 @@ export default function Study() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/9"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/9")) || [];
       setData(res);
       setLoading(false);
     }

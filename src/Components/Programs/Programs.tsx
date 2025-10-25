@@ -12,10 +12,7 @@ export default function Programs() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/4"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/4")) || [];
       setData(res);
       setLoading(false);
     }

@@ -12,10 +12,7 @@ export default function Meetings() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/7"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/7")) || [];
       setData(res);
       setLoading(false);
     }

@@ -14,10 +14,7 @@ export default function Activities() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/14"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/14")) || [];
       setData(res);
       setLoading(false);
     }

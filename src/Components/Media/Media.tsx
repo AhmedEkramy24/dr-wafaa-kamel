@@ -12,10 +12,7 @@ export default function Media() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/16"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/16")) || [];
       setData(res);
       setLoading(false);
     }

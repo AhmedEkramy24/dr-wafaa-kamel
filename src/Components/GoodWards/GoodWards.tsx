@@ -12,10 +12,7 @@ export default function GoodWards() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/15"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/15")) || [];
       setData(res);
       setLoading(false);
     }

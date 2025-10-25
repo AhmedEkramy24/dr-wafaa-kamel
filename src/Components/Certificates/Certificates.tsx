@@ -12,10 +12,7 @@ export default function Certificates() {
 
   useEffect(() => {
     async function loadData() {
-      const res =
-        (await fetchData(
-          "https://test.drwafaakamel.com/api/v1/categories/3"
-        )) || [];
+      const res = (await fetchData("/api/v1/categories/3")) || [];
       setData(res);
       setLoading(false);
     }

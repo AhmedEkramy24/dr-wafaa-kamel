@@ -73,7 +73,7 @@ export default function Links() {
       {/* links small screens */}
 
       <ul
-        className={` text-sm lg:hidden flex flex-col duration-500 fixed top-0  bottom-0 bg-white pt-10 z-50 text-start border-r border-gray-200 ${
+        className={` text-sm lg:hidden flex flex-col duration-500 fixed top-0  bottom-0 bg-white pt-8 z-50 text-start border-r border-gray-200 ${
           openMenue ? "left-0" : "-left-full"
         }`}
         ref={menuRef}
@@ -87,7 +87,7 @@ export default function Links() {
         {navLinks.map(({ href, label }) => (
           <li
             key={href}
-            className="p-3 border-b border-gray-200 "
+            className="p-2 border-b border-gray-200 "
             onClick={() => setopenMenue(false)}
           >
             <NavLink

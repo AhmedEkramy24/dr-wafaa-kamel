@@ -49,7 +49,6 @@ export default function Meetings() {
             >
               <div className="w-full sm:h-[200px] h-[250px] rounded-2xl overflow-hidden bg-blue-100 text-[#235A93] flex justify-center items-center text-7xl">
                 <i className="fas fa-play"></i>
-                <i className="fas fa-microphone"></i>
               </div>
               <p className="text-center p-2 font-semibold">{item.title}</p>
             </Link>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const navLinks = [
+  { href: "/", label: "الصفحة الرئيسية" },
   { href: "/cv", label: "السيرة الذاتية" },
   { href: "/awards", label: "الجوائز" },
   { href: "/certificates", label: "    التكريم وشهادات تقدير " },
@@ -58,7 +59,7 @@ export default function Links() {
       <ul className=" text-[17px]  font-semibold lg:flex hidden items-center">
         {navLinks.map(
           ({ href, label }, index) =>
-            index < 7 && (
+            index < 8 && (
               <li key={href} className="mx-3">
                 <NavLink
                   to={href}

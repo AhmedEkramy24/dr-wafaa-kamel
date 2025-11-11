@@ -15,7 +15,7 @@ export default function Banner() {
             className="text-3xl lg:text-5xl mb-8 font-bold text-[#235A93]"
           />
           <BlurText
-            text="أستاذة بأداب القاهرة"
+            text="أستاذة بآداب  القاهرة"
             delay={250}
             animateBy="words"
             direction="top"

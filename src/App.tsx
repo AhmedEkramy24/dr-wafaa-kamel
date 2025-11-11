@@ -24,6 +24,7 @@ import Media from "./Components/Media/Media";
 import GoodWards from "./Components/GoodWards/GoodWards";
 import GoodWard from "./Components/GoodWards/SingleGoodWard";
 import Contact from "./Components/Contact/Contact";
+import NotFound from "./Components/NotFound/NotFound";
 
 const router = createHashRouter([
   {
@@ -98,6 +99,10 @@ const router = createHashRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

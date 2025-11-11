@@ -52,7 +52,7 @@ export default function Books() {
                       className="w-full md:h-[300px] object-cover object-top"
                     />
                     <div className="absolute top-full group-hover:top-0 duration-500 left-0 w-full h-full flex justify-center items-center bg-[rgba(0,0,0,60%)]   text-white  text-3xl">
-                      أقرأ الكتاب 📖
+                      اقرأ الكتاب 📖
                     </div>
                   </div>
                   <p className="text-center py-3 font-semibold text-lg">

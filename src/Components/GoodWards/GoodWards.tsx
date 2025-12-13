@@ -31,7 +31,7 @@ export default function GoodWards() {
   }
   return (
     <div>
-      <Title>شهادات في حقي 🖋</Title>
+      <Title>شهادات في حقها 🖋</Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

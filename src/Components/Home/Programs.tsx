@@ -3,7 +3,7 @@ import SliderComponent from "../SliderComponent/SliderComponent";
 
 const data = [
   {
-    title: "برنامج أحكام التنافر بالانجليزية",
+    title: "برنامج أحكام التنافر بالإنجليزية",
     src: "/programs/1.jpg",
   },
   {
@@ -11,7 +11,7 @@ const data = [
     src: "/programs/2.jpg",
   },
   {
-    title: "برنامج أحوال تآالف صوتي الفعل الثلاثي المضعف",
+    title: "  برنامج أحكام تآلف صوتي الفعل الثلاثي المضعف",
     src: "/programs/3.jpg",
   },
   {

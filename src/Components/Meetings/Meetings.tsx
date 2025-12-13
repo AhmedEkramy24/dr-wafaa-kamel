@@ -33,7 +33,7 @@ export default function Meetings() {
 
   return (
     <div>
-      <Title>لقاءت ثقافية وتليفزيونية 📺</Title>
+      <Title>لقاءت  تليفزيونية 📺</Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

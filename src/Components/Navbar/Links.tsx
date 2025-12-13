@@ -5,15 +5,15 @@ const navLinks = [
   { href: "/", label: "الصفحة الرئيسية" },
   { href: "/cv", label: "السيرة الذاتية" },
   { href: "/awards", label: "الجوائز" },
-  { href: "/certificates", label: "    التكريم وشهادات تقدير " },
+  { href: "/certificates", label: "    التكريم وشهادات التقدير " },
   { href: "/programes", label: "برامج لغوية حاسوبية" },
   { href: "/books", label: "كتب مؤلفة ومترجمة" },
-  { href: "/meetings", label: "لقاءات ثقافية تلفزيونية" },
-  { href: "/study", label: "دراسات ونقد لأعمالي" },
+  { href: "/meetings", label: "لقاءات  تلفزيونية" },
+  { href: "/study", label: "دراسات ونقد لأعمالها" },
   { href: "/volenteering", label: "إسهام في قضية علمية وقومية" },
   {
     href: "/researches",
-    label: "أبحاثي",
+    label: "بحوثها",
   },
   {
     href: "/shares",
@@ -21,15 +21,15 @@ const navLinks = [
   },
   {
     href: "/articles",
-    label: "بحوث ورسائل علمية منشورة بنيت على أعمالي",
+    label: "أبحاث بنيت على أعمالها",
   },
   {
     href: "/writings",
-    label: "بعض ما كتب عني",
+    label: "بعض ما كتب عنها",
   },
-  { href: "/activities", label: "أنشطة خيرية" },
+  { href: "/activities", label: "أنشطة خدمة المجتمع" },
   { href: "/media", label: "مقالات علمية بوسائل الإعلام" },
-  { href: "/goodwards", label: "شهادات في حقي" },
+  { href: "/goodwards", label: "شهادات في حقها" },
 
   { href: "/contact", label: "اتصل بنا" },
 ];
@@ -56,14 +56,14 @@ export default function Links() {
   return (
     <>
       {/* links large screens */}
-      <ul className=" text-[17px]  font-semibold lg:flex hidden items-center">
+      <ul className=" text-[17px]  font-semibold xl:flex hidden items-center">
         {navLinks.map(
           ({ href, label }, index) =>
             index < 8 && (
-              <li key={href} className="mx-3">
+              <li key={href} className="mx-1">
                 <NavLink
                   to={href}
-                  className={` hover:text-[#235A93] transition-colors `}
+                  className={` hover:text-[#235A93] text-nowrap hover:border-[#235A93]  px-2 py-1 rounded-md border-slate-300 border `}
                 >
                   {label}
                 </NavLink>
@@ -74,7 +74,7 @@ export default function Links() {
       {/* links small screens */}
 
       <ul
-        className={` text-sm lg:hidden flex flex-col duration-500 fixed top-0  bottom-0 bg-white pt-8 z-50 text-start border-r border-gray-200 ${
+        className={` text-sm xl:hidden flex w-[150px] flex-col duration-500 fixed top-0  bottom-0 bg-white pt-8 z-50 text-start border-r border-gray-200 ${
           openMenue ? "left-0" : "-left-full"
         }`}
         ref={menuRef}
@@ -88,7 +88,7 @@ export default function Links() {
         {navLinks.map(({ href, label }) => (
           <li
             key={href}
-            className="p-2 border-b border-gray-200 "
+            className="p-1 border-b border-gray-200 "
             onClick={() => setopenMenue(false)}
           >
             <NavLink
@@ -103,7 +103,7 @@ export default function Links() {
       </ul>
 
       {/* bars icon to close and open menu in small screens */}
-      <button className="lg:hidden" onClick={() => setopenMenue(!openMenue)}>
+      <button className="xl:hidden" onClick={() => setopenMenue(!openMenue)}>
         <i className="fas fa-bars"></i>
       </button>
     </>

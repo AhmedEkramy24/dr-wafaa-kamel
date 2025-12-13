@@ -108,7 +108,7 @@ export default function Study() {
   }
   return (
     <div>
-      <Title>دراسات ونقد لأعمالى 🧾</Title>
+      <Title>دراسات ونقد لأعمالها 🧾</Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

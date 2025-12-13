@@ -32,7 +32,7 @@ export default function Writings() {
   }
   return (
     <div>
-      <Title>بعض ما كتب عنى فى بعض بحوثى 🖋</Title>
+      <Title>بعض ما كتب عنها في بعض بحوثها 🖋</Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

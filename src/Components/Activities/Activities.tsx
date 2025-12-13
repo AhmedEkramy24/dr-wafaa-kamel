@@ -34,7 +34,7 @@ export default function Activities() {
   }
   return (
     <div>
-      <Title>أنشطة خيرية</Title>
+      <Title>أنشطة خدمة المجتمع</Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

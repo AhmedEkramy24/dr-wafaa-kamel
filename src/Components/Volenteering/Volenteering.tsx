@@ -33,7 +33,7 @@ export default function Volenteering() {
 
   return (
     <div>
-      <Title> اسهام فى قضية علمية وقومية </Title>
+      <Title> اسهام في قضية علمية وقومية </Title>
       <AnimatedContent
         direction="horizontal"
         duration={1.2}

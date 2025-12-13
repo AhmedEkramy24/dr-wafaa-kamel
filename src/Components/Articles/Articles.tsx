@@ -31,7 +31,7 @@ export default function Articles() {
 
   return (
     <div>
-      <Title>بحوث ورسائل علمية منشورة بنيت على أعمالي</Title>
+      <Title>بحوث ورسائل علمية منشورة بنيت على أعمالها</Title>
       <div className="container mx-auto p-2 space-y-5">
         {data.reverse().map((item, index) => (
           <div key={index}>
